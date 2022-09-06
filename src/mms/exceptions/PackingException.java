@@ -1,13 +1,13 @@
 package mms.exceptions;
 
-public class PackingException extends Throwable {
+public class PackingException extends RuntimeException {
     private static final long serialVersionUID = -7605578321320427694L;
     private String message;
 
-    PackingException(){
-
+    public PackingException(){
+        super();
     }
-    PackingException(String message){
+    public PackingException(String message){
         super(message);
         this.message  = message;
     }
