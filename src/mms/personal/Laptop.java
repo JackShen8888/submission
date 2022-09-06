@@ -1,14 +1,13 @@
 package mms.personal;
 
-public class Laptop  extends  Personal{//便携式电脑
+import mms.utility.Packable;
+
+public class Laptop  extends  Personal implements Packable {//便携式电脑
     public int age;
 
     @Override
     public String toString() {
-        return "Laptop{" +
-                "age=" + age +
-                ", owner='" + owner + '\'' +
-                '}';
+        return  "Laptop ("+owner+") - "+age;
     }
 
     public Laptop(String owner, int age) {
@@ -17,5 +16,9 @@ public class Laptop  extends  Personal{//便携式电脑
             throw new IllegalArgumentException();
         }
         this.age = age;
+    }
+    @Override
+    public double getVolume() {
+        return width*height*length;
     }
 }

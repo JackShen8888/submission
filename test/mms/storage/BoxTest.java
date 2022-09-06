@@ -149,5 +149,10 @@ public class BoxTest {
         public double getLength() {
             return length;
         }
+
+        @Override
+        public double getVolume() {
+            return width*height*length;
+        }
     }
 }

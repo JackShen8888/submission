@@ -1,12 +1,12 @@
 package mms.exceptions;
 
-public class PackingOrderException extends RuntimeException{
+public class PackingOrderException extends PackingException{
     private static final long serialVersionUID = -928554553515127096L;
     private String message;
-    PackingOrderException(){
+    public PackingOrderException(){
         super();
     }
-    PackingOrderException(String message){
+    public PackingOrderException(String message){
         super(message);
         this.message  = message;
     }

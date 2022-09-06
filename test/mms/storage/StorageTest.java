@@ -504,6 +504,11 @@ public class StorageTest {
         }
 
         @Override
+        public double getVolume() {
+            return getWidth()*getLength()*getHeight();
+        }
+
+        @Override
         public String toString() {
             return String.format("%s (%.2f, %.2f, %.2f)",
                     getClass().getSimpleName(),
@@ -537,6 +542,11 @@ public class StorageTest {
         @Override
         public double getLength() {
             return length;
+        }
+
+        @Override
+        public double getVolume() {
+            return getWidth()*getHeight()*getLength();
         }
     }
 }

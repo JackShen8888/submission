@@ -42,10 +42,16 @@ public class Personal implements Packable {
     }
 
     public Personal(String owner) {
+        if(owner == null){
+            throw new IllegalArgumentException();
+        }
         this.owner = owner;
     }
     public Personal(String owner, double width, double height,
                     double length){
+        if(owner == null || width <0 || height<0 || length<0){
+            throw new IllegalArgumentException();
+        }
         this.owner = owner;
         this.width = width;
         this.height = height;
@@ -53,10 +59,21 @@ public class Personal implements Packable {
     }
 
 
-    public void setDimensions(double width, double height, double length) {
+    protected void setDimensions(double width, double height, double length) {
         this.width = width;
         this.height = height;
         this.length = length;
     }
+    @Override
+    public double getVolume() {
+        return width*height*length;
+    }
 
+    @Override
+    public String toString() {
+        return "Personal("+owner+")";
+    }
+    public static int getBaseWeight(){
+        return 250;
+    }
 }

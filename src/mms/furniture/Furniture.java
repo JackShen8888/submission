@@ -7,7 +7,7 @@ public class Furniture implements Packable {
 
     @Override
     public String toString() {
-        return furnitureType.toString();
+        return "Furniture ("+furnitureType.name() +")";
     }
 
     public Furniture(FurnitureType furnitureType){
@@ -30,5 +30,8 @@ public class Furniture implements Packable {
     public double getHeight() {
         return this.furnitureType.height;
     }
-
+    @Override
+    public double getVolume() {
+        return getWidth()*getHeight()*getLength();
+    }
 }

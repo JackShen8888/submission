@@ -1,25 +1,30 @@
 package mms.personal;
 
 
-public class Book extends Personal{
-    public String bookName;
-    public boolean isCloth;
+import mms.utility.Packable;
+
+public class Book extends Personal implements Packable {
+    public String title;
+    public boolean isFiction;
 
     @Override
     public String toString() {
-        return "Book{" +
-                "bookName='" + bookName + '\'' +
-                ", isCloth=" + isCloth +
-                ", owner='" + owner + '\'' +
-                ", width=" + width +
-                ", height=" + height +
-                ", length=" + length +
-                '}';
+        return "Box(" + owner + ") Title:" + title + "("+isFiction+")";
+    }
+    public String getTitle() {
+        return title;
+    }
+    public Book(String owner, String title, boolean isFiction) {
+        super(owner);
+        if(title == null){
+           throw new IllegalArgumentException("title is null!");
+        }
+        this.title = title;
+        this.isFiction = isFiction;
     }
 
-    public Book(String owner, String bookName, boolean isCloth) {
-        super(owner);
-        this.bookName = bookName;
-        this.isCloth = isCloth;
+    @Override
+    public double getVolume() {
+        return width*height*length;
     }
 }
