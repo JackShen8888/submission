@@ -9,7 +9,7 @@ public class Book extends Personal implements Packable {
 
     @Override
     public String toString() {
-        return "Box(" + owner + ") Title:" + title + "("+isFiction+")";
+        return "Book (" + owner + ") Title: " + title + "("+(isFiction?"Fiction":"Non-Fiction")+")";
     }
     public String getTitle() {
         return title;

@@ -43,14 +43,14 @@ public class Personal implements Packable {
 
     public Personal(String owner) {
         if(owner == null){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("所属者不可为null!");
         }
         this.owner = owner;
     }
     public Personal(String owner, double width, double height,
                     double length){
         if(owner == null || width <0 || height<0 || length<0){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("非法数据");
         }
         this.owner = owner;
         this.width = width;

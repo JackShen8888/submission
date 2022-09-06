@@ -28,7 +28,7 @@ public class MovingTruck extends Storage implements Packable {
         }
     }
     public MovingTruck(int width, int height, int length) {
-        super(width, height, length);
+        super(width, height, length,Size.LARGE);
         if(length < 1500){
             throw new IllegalArgumentException("不可装载");
         }
